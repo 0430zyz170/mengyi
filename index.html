@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#141a12">
+<title>梦噫 · 一部关于你的手机</title>
+<link rel="stylesheet" href="css/style.css?v=20261126m">
+</head>
+<body>
+<div class="stage">
+  <div class="stage-glow"></div>
+  <div class="stage-brand">
+    <div class="brand-cn">梦噫</div>
+    <div class="brand-en">DREAMYI OS</div>
+    <div class="brand-line"></div>
+    <div class="brand-sub">把喜欢，藏进一部手机里</div>
+  </div>
+
+  <div class="device">
+    <span class="device-side power"></span>
+    <span class="device-side vol"></span>
+    <div class="phone">
+      <div class="screen" id="screen" data-status="light">
+
+        <!-- 状态栏 -->
+        <div class="statusbar" id="statusbar">
+          <div class="sb-left">
+            <span id="sbTime">21:04</span>
+            <span class="sb-carrier">中国移动</span>
+            <span class="sb-5g">5G</span>
+          </div>
+          <div class="sb-right">
+            <svg class="sb-ico" viewBox="0 0 24 16" aria-hidden="true"><rect x="0" y="11" width="3" height="5" rx="1"/><rect x="5" y="8" width="3" height="8" rx="1"/><rect x="10" y="5" width="3" height="11" rx="1"/><rect x="15" y="1" width="3" height="15" rx="1"/></svg>
+            <svg class="sb-ico" viewBox="0 0 24 18" aria-hidden="true"><path d="M12 15.6a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4Zm5.1-4.7a7.4 7.4 0 0 0-10.2 0l1.5 1.6a5.2 5.2 0 0 1 7.2 0l1.5-1.6Zm3.4-3.5a12.2 12.2 0 0 0-17 0l1.5 1.6a10 10 0 0 1 14 0l1.5-1.6Z"/></svg>
+            <div class="sb-battery"><i></i></div>
+          </div>
+        </div>
+
+        <!-- 开机 -->
+        <section class="layer boot show" id="boot">
+          <div class="boot-mark">梦</div>
+          <div class="boot-name">梦噫</div>
+          <div class="boot-sub">DREAMYI OS</div>
+          <div class="boot-bar"><i></i></div>
+        </section>
+
+        <!-- 锁屏 -->
+        <section class="layer lock" id="lock">
+          <div class="lock-bg"></div>
+          <div class="lock-shade"></div>
+          <div class="lock-top">
+            <div class="lock-time" id="lockTime">21:04</div>
+            <div class="lock-date" id="lockDate">11月25日 星期三</div>
+            <div class="lock-weather">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-8 5.5 5.5 0 0 0-10.4-1.2A4.6 4.6 0 0 0 7 18Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              <span id="lockWeather">正在定位…</span>
+              <span class="dot"></span>
+              <b id="lockTemp">--°</b>
+            </div>
+          </div>
+
+          <div class="countdown-pill" id="countdownChip">
+            <span class="cd-label">距离元旦</span>
+            <span class="cd-num" id="cdDays">37</span>
+            <span class="cd-unit">天</span>
+            <span class="cd-heart">♡</span>
+          </div>
+
+          <div class="lock-notes" id="lockNotes"></div>
+
+          <div class="lock-bottom">
+            <button class="lock-circle" data-lockact="camera" aria-label="相机">
+              <svg viewBox="0 0 24 24"><path d="M4 7.5h3l1.4-2h7.2L17 7.5h3a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 20 19.5H4A1.5 1.5 0 0 1 2.5 18V9A1.5 1.5 0 0 1 4 7.5Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+            <div class="swipe-hint" id="swipeHint">
+              <span>上滑解锁</span>
+              <i></i>
+            </div>
+            <button class="lock-circle" data-lockact="torch" aria-label="手电筒">
+              <svg viewBox="0 0 24 24"><path d="M8 3h8v4l-1.6 2.4V21h-4.8V9.4L8 7V3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 14h4" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- 密码 -->
+        <section class="layer passcode" id="passcode">
+          <div class="pass-bg"></div>
+          <div class="pass-shade"></div>
+          <div class="pass-wrap">
+            <div class="pass-time" id="passTime">21:04</div>
+            <div class="pass-lock">
+              <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <div class="pass-title">输入锁屏密码</div>
+            <div class="pass-dots" id="passDots"><i></i><i></i><i></i><i></i></div>
+            <div class="pass-err" id="passErr"></div>
+            <div class="keypad" id="keypad">
+              <button data-key="1">1</button>
+              <button data-key="2">2<span>ABC</span></button>
+              <button data-key="3">3<span>DEF</span></button>
+              <button data-key="4">4<span>GHI</span></button>
+              <button data-key="5">5<span>JKL</span></button>
+              <button data-key="6">6<span>MNO</span></button>
+              <button data-key="7">7<span>PQRS</span></button>
+              <button data-key="8">8<span>TUV</span></button>
+              <button data-key="9">9<span>WXYZ</span></button>
+              <button class="kp-ghost" data-key="cancel">取消</button>
+              <button data-key="0">0</button>
+              <button data-key="del" aria-label="删除">
+                <svg viewBox="0 0 24 24"><path d="M9 5h11a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-6-7 6-7Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m12 9 6 6m0-6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+            <div class="pass-tip">密码是我们的日子 · 0430</div>
+          </div>
+        </section>
+
+        <!-- 桌面 -->
+        <section class="layer home" id="home">
+          <div class="home-bg"></div>
+          <div class="home-shade"></div>
+          <div class="home-content">
+            <div class="home-head">
+              <div class="home-time" id="homeTime">21:04</div>
+              <div class="home-date" id="homeDate">11月25日 星期三</div>
+              <div class="home-chips">
+                <button class="glass-chip" id="homeWeather">
+                  <svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-8 5.5 5.5 0 0 0-10.4-1.2A4.6 4.6 0 0 0 7 18Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <span>天气</span>
+                </button>
+                <button class="glass-chip" id="homeCd">
+                  <span class="mini-heart">♡</span>
+                  <span>元旦 · <b>37</b> 天</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="app-grid" id="appGrid"></div>
+            <div class="page-dots"><i class="on"></i><i></i></div>
+            <div class="dock" id="dock"></div>
+          </div>
+        </section>
+
+        <!-- 应用容器 -->
+        <section class="layer app-layer" id="app">
+          <div id="appContent"></div>
+          <div class="call-screen" id="callScreen"></div>
+        </section>
+
+        <div class="torch-overlay" id="torchOverlay">
+          <div>手电筒已开启</div>
+          <button id="torchOff">轻触关闭</button>
+        </div>
+
+        <div class="banner" id="banner"></div>
+        <div id="sheetRoot"></div>
+        <div id="modalRoot"></div>
+        <div class="toast" id="toast"></div>
+        <div class="gesturebar" id="gesturebar"><i></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-hint">上滑解锁 · 密码是我们的日子</div>
+</div>
+
+<script src="js/data.js?v=20261126m"></script>
+<script src="js/core.js?v=20261126m"></script>
+<script src="js/ui.js?v=20261126m"></script>
+<script src="js/wechat.js?v=20261126m"></script>
+<script src="js/apps1.js?v=20261126m"></script>
+<script src="js/apps2.js?v=20261126m"></script>
+<script src="js/apps3.js?v=20261126m"></script>
+<script src="js/main.js?v=20261126m"></script>
+</body>
+</html>
